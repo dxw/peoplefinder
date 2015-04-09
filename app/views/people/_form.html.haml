@@ -106,9 +106,11 @@
     = f.label :image, class: 'form-label-bold' do
       Photo
       %p.form-hint= info_text('photo_upload_hint')
+
+    %p
+      = profile_image_tag @person, @person.image.medium, class: 'preview'
     = f.file_field :image, class: 'form-control file'
 
-    = profile_image_tag @person, @person.image.medium, class: 'preview'
     %p
       - if @person.image?
         = link_to 'Crop image', edit_person_image_path(@person)
