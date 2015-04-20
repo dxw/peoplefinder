@@ -200,7 +200,11 @@ CREATE TABLE people (
     super_admin boolean DEFAULT false,
     building text,
     city text,
+<<<<<<< HEAD
     secondary_email text
+=======
+    profile_photo_id integer
+>>>>>>> Adds profile_photo_id column to people table
 );
 
 
@@ -615,4 +619,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150407101222');
 INSERT INTO schema_migrations (version) VALUES ('20150413101844');
 
 INSERT INTO schema_migrations (version) VALUES ('20150420132554');
+
+INSERT INTO schema_migrations (version) VALUES ('20150420132854');
 
