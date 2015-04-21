@@ -23,6 +23,20 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
+--
+-- Name: pg_stat_statements; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS pg_stat_statements WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION pg_stat_statements; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION pg_stat_statements IS 'track execution statistics of all SQL statements executed';
+
+
 SET search_path = public, pg_catalog;
 
 SET default_tablespace = '';
@@ -35,7 +49,7 @@ SET default_with_oids = false;
 
 CREATE TABLE communities (
     id integer NOT NULL,
-    name character varying,
+    name character varying(255),
     created_at timestamp without time zone,
     updated_at timestamp without time zone
 );
@@ -108,7 +122,7 @@ CREATE TABLE groups (
     name text,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    slug character varying,
+    slug character varying(255),
     description text,
     ancestry text,
     ancestry_depth integer DEFAULT 0 NOT NULL
@@ -189,8 +203,8 @@ CREATE TABLE people (
     works_wednesday boolean DEFAULT true,
     works_thursday boolean DEFAULT true,
     works_friday boolean DEFAULT true,
-    image character varying,
-    slug character varying,
+    image character varying(255),
+    slug character varying(255),
     works_saturday boolean DEFAULT false,
     works_sunday boolean DEFAULT false,
     tags text,
@@ -294,7 +308,7 @@ ALTER SEQUENCE profile_photos_id_seq OWNED BY profile_photos.id;
 --
 
 CREATE TABLE schema_migrations (
-    version character varying NOT NULL
+    version character varying(255) NOT NULL
 );
 
 
