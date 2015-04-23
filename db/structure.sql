@@ -125,7 +125,8 @@ CREATE TABLE groups (
     slug character varying(255),
     description text,
     ancestry text,
-    ancestry_depth integer DEFAULT 0 NOT NULL
+    ancestry_depth integer DEFAULT 0 NOT NULL,
+    acronym text
 );
 
 
@@ -214,11 +215,8 @@ CREATE TABLE people (
     super_admin boolean DEFAULT false,
     building text,
     city text,
-<<<<<<< HEAD
-    secondary_email text
-=======
+    secondary_email text,
     profile_photo_id integer
->>>>>>> Adds profile_photo_id column to people table
 );
 
 
@@ -631,6 +629,8 @@ INSERT INTO schema_migrations (version) VALUES ('20150403162416');
 INSERT INTO schema_migrations (version) VALUES ('20150407101222');
 
 INSERT INTO schema_migrations (version) VALUES ('20150413101844');
+
+INSERT INTO schema_migrations (version) VALUES ('20150417141735');
 
 INSERT INTO schema_migrations (version) VALUES ('20150420132554');
 
