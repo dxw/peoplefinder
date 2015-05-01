@@ -49,7 +49,7 @@ class Person < ActiveRecord::Base
   sanitize_fields :email, strip: true, downcase: true
   before_save :sanitize_tags
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, PersonImageUploader
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
   validates :given_name, presence: true, on: :update

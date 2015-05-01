@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ImageUploader, type: :uploader do
+RSpec.describe PersonImageUploader, type: :uploader do
   include CarrierWave::Test::Matchers
   include PermittedDomainHelper
 

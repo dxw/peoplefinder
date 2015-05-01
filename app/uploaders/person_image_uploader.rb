@@ -1,5 +1,4 @@
-# encoding: utf-8
-class ImageUploader < CarrierWave::Uploader::Base
+class PersonImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   include CarrierWave::DirHelpers
 
@@ -9,9 +8,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    '%suploads/peoplefinder/%s/%s/%s' % [
+    '%suploads/peoplefinder/person/%s/%s' % [
       base_upload_dir,
-      model.class.to_s.underscore,
       mounted_as,
       model.id
     ]
